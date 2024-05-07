@@ -1,20 +1,24 @@
+import Button from './Button';
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      App
+      <div>
+        <Button success roundede outline>Click here</Button>
+      </div>
+      <div>
+        <Button danger outline>Buy Now!</Button>
+      </div>
+      <div>
+        <Button warning>See Deal!</Button>
+      </div>
+      <div>
+        <Button secondary outline>Hide Ads</Button>
+      </div>
+      <div>
+        <Button secondary rounded>Smth</Button>
+      </div>
     </div>
   );
 }
