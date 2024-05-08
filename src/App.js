@@ -17,7 +17,7 @@ function App() {
         <Button secondary outline>Hide Ads</Button>
       </div>
       <div>
-        <Button secondary rounded>Smth</Button>
+        <Button primary rounded>Smth</Button>
       </div>
     </div>
   );
