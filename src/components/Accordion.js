@@ -2,14 +2,24 @@ import { useState } from 'react';
 
 function Accordion({ items }) {
   const [expandedIndex, setExpandedIndex] = useState(0)
+  
+  const handleClick = (nextIndex) => {
+    setExpandedIndex(nextIndex)  
+}
 
   const renderedItems = items.map((item, index) => {
-    const isExpanded = index === expandedIndex;
-    
+    const isExpanded = index === expandedIndex; 
+
+    const icon = <span>
+      {isExpanded ? 'DOWN' : 'LEFT'}
+    </span>
 
     return (
       <div key={item.id}>
-        <div>{item.label}</div>
+        <div onClick={() => handleClick(index)}>
+        {icon}
+        {item.label}
+        </div>
         <div>{isExpanded && <div>{item.content}</div>}</div>
       </div>
     )
