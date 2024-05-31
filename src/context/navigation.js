@@ -1,9 +1,12 @@
-import React, {createContext} from 'react';
+import React, {createContext, useState} from 'react';
 
 const NavigationContext = createContext();
 
-function NavigationProvider() {
+function NavigationProvider({children}) {
+    const [currentPath, setCurringPath] = useState(window.location.pathname);
+
     return <NavigationContext.Provider value={{}}>
+        {currentPath}
         {children}
     </NavigationContext.Provider>
 }
