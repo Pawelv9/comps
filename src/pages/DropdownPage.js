@@ -16,7 +16,6 @@ function DropdownPage() {
 
 return(
   <div className="flex">
-    <a href='dashboard'>Dashboard</a>
     <Dropdown options={options} value={selection} onChange={handleSelect} />
   </div>
 
