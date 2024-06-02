@@ -19,9 +19,7 @@ function AccordionPage() {
     },
   ]
 
-  return (
-     <Accordion items = { items } />
-  )
+  return <Accordion items = { items } />
 }
 
 export default AccordionPage;
