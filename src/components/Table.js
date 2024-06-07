@@ -6,14 +6,19 @@ function Table({ data, config }) {
     })
 
     const renderedRows = data.map(fruit => {
+        const renderedCells = config.map(column => {
+            return <td className='p-3' key={column.label}>{column.render(fruit)}</td>
+        })
+
         return (
             <tr className='border-b' key={fruit.name}>
-                <td className='p-3'>{config[0].render(fruit)}</td>
-                <td className='p-3'>
-                    {config[1].render(fruit)}
-                    {/*<div className={`p- 3 m-2 ${config[1].render(fruit)}`}></div>*/}
-                </td>
-                <td className='p-3'>{config[2].render(fruit)}</td>
+                {renderedCells}
+                {/*<td className='p-3'>{config[0].render(fruit)}</td>*/}
+                {/*<td className='p-3'>*/}
+                {/*    {config[1].render(fruit)}*/}
+                {/*    /!*<div className={`p- 3 m-2 ${config[1].render(fruit)}`}></div>*!/*/}
+                {/*</td>*/}
+                {/*<td className='p-3'>{config[2].render(fruit)}</td>*/}
             </tr>
         );
     });
