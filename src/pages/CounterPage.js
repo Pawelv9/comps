@@ -4,6 +4,7 @@ import Panel from "../components/Panel";
 
 const INCREMENT_COUNT = 'increment';
 const SET_VALUE_TO_ADD = 'change-value-to-add'
+const DECREMENT_COUNT = 'decrement';
 
 const reducer = (state, action) => {
     switch (action.type) {
@@ -16,6 +17,11 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 valueToAdd: action.payload,
+            };
+        case 'DECREMENT_COUNT':
+            return {
+                ...state,
+                count: state.count - 1,
             };
         default:
             return state;
@@ -55,7 +61,9 @@ function CounterPage({ initialCount }) {
     }
 
     const decrement = () => {
-        // setCount(count - 1)
+        dispatch({
+            type: DECREMENT_COUNT,
+        })
     }
 
     const handleChange = (event) => {
